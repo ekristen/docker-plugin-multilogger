@@ -1,0 +1,22 @@
+{
+	"description": "multilogger as a plugin",
+	"documentation": "-",
+	"entrypoint": ["/usr/bin/multilogger"],
+	"interface": {
+		"types": ["docker.logdriver/1.0"],
+		"socket": "multilogger.sock"
+	},
+  "network": {
+    "type": "host"
+  },
+	"env": [
+		{
+			"name": "LOG_LEVEL",
+			"description": "Set log level to output for plugin logs",
+			"value": "info",
+			"settable": ["value"]
+		}
+	]
+}
+
+
