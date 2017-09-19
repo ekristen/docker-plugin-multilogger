@@ -50,6 +50,8 @@ func (d *driver) StartLogging(file string, logCtx logger.Info) error {
 	}
 	d.mu.Unlock()
 
+	logCtx.Config["tag"] = ""
+
 	if logCtx.LogPath == "" {
 		logCtx.LogPath = filepath.Join("/var/log/docker", logCtx.ContainerID)
 	}
