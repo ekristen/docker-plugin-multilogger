@@ -11,13 +11,13 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/Sirupsen/logrus"
 	"github.com/docker/docker/api/types/plugins/logdriver"
 	"github.com/docker/docker/daemon/logger"
 	"github.com/docker/docker/daemon/logger/jsonfilelog"
 	"github.com/docker/docker/daemon/logger/splunk"
 	protoio "github.com/gogo/protobuf/io"
 	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
 	"github.com/tonistiigi/fifo"
 )
 

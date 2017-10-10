@@ -26,7 +26,6 @@ func init() {
 	baseTimestamp = time.Now()
 }
 
-// TextFormatter formats logs into text
 type TextFormatter struct {
 	// Set to true to bypass checking for a TTY before outputting colors.
 	ForceColors bool
@@ -65,7 +64,6 @@ func (f *TextFormatter) init(entry *Entry) {
 	}
 }
 
-// Format renders a single log entry
 func (f *TextFormatter) Format(entry *Entry) ([]byte, error) {
 	var b *bytes.Buffer
 	keys := make([]string, 0, len(entry.Data))
@@ -90,7 +88,7 @@ func (f *TextFormatter) Format(entry *Entry) ([]byte, error) {
 
 	timestampFormat := f.TimestampFormat
 	if timestampFormat == "" {
-		timestampFormat = defaultTimestampFormat
+		timestampFormat = DefaultTimestampFormat
 	}
 	if isColored {
 		f.printColored(b, entry, keys, timestampFormat)
